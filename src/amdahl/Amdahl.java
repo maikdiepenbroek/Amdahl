@@ -42,7 +42,7 @@ public final class Amdahl {
 	public static double calculateSpeedUpFactor(final int numberOfCPU, final double sequentialPercentage) throws IllegalArgumentException {
 		if(numberOfCPU < 0) { throw new IllegalArgumentException( "You cannot have a negative amount of CPU." );}
 		
-		return numberOfCPU / (1 + sequentialPercentage/10 * ( numberOfCPU-1) ) ;		
+		return numberOfCPU / (1 + sequentialPercentage/10 * ( numberOfCPU-1) ) ;	
 	}
 	
 	/**
