@@ -11,7 +11,7 @@ public class AmdahlTests {
 	{
 		final int numberOfCPU 				= 1000;
 		final double sequentialPercentage 	= 0.01;
-		double expected						= 500.250;
+		final double expected						= 500.250;
 		
 		assertEquals(expected, Amdahl.calculateSpeedUpFactor(numberOfCPU, sequentialPercentage), 0.001);
 	}
@@ -31,8 +31,9 @@ public class AmdahlTests {
 	{
 		final int numberOfCPU 				= 0;
 		final double sequentialPercentage 	= 0.01;
+		final double expected				= 0;
 		
-		assertEquals(0, Amdahl.calculateSpeedUpFactor( numberOfCPU, sequentialPercentage ), 0.001);
+		assertEquals(expected, Amdahl.calculateSpeedUpFactor( numberOfCPU, sequentialPercentage ), 0.001);
 	}
 	
 }
