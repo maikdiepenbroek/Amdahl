@@ -14,9 +14,10 @@ public final class Amdahl {
 	 * @param args
 	 * @throws InvalidArgumentException 
 	 */
-	public static void main(final String[] args) throws InvalidArgumentException {
+	public static void main(final String[] args) throws IllegalArgumentException {
 
 	}
+	private Amdahl() {	}
 	
 	/**
 	 * @author maikdiepenbroek
@@ -25,9 +26,9 @@ public final class Amdahl {
 	 * @return the speedUpFactor
 	 * @throws InvalidArgumentException
 	 */
-	public static double calculateSpeedUpFactor(final int numberOfCPU, final double sequentialPercentage) throws InvalidArgumentException {
-		if(numberOfCPU < 1) {
-			throw new InvalidArgumentException();
+	public static double calculateSpeedUpFactor(final int numberOfCPU, final double sequentialPercentage) throws IllegalArgumentException {
+		if(numberOfCPU < 0) {
+			throw new IllegalArgumentException();
 		}
 		return numberOfCPU / (1 + sequentialPercentage/10 * ( numberOfCPU-1) ) ;		
 	}
@@ -39,8 +40,8 @@ public final class Amdahl {
 	 * @return the efficiencyFactor
 	 * @throws InvalidArgumentException
 	 */
-	public static double calculateEfficiencyFactor(final double speedUpFactor, final int numberOfCPU) throws InvalidArgumentException {
-		if(numberOfCPU < 1) { throw new InvalidArgumentException();	}
+	public static double calculateEfficiencyFactor(final double speedUpFactor, final int numberOfCPU) throws IllegalArgumentException {
+		if(numberOfCPU < 0) { throw new IllegalArgumentException();	}
 		return speedUpFactor/numberOfCPU;
 	}
 

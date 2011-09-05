@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 public class AmdahlTests {
 
 	@Test
-	public void testAmdahlSpeedupFactorWithPositiveNumberOfCPU() throws InvalidArgumentException
+	public void testAmdahlSpeedupFactorWithPositiveNumberOfCPU() throws IllegalArgumentException
 	{
 		final int numberOfCPU 				= 1000;
 		final double sequentialPercentage 	= 0.01;
@@ -17,7 +17,7 @@ public class AmdahlTests {
 	}
 	
 	@Test(expected=IllegalArgumentException.class)
-	public void testAmdahlSpeedupFactorWithNegativeNumberOfCPU() throws InvalidArgumentException
+	public void testAmdahlSpeedupFactorWithNegativeNumberOfCPU() throws IllegalArgumentException
 	{
 		final int numberOfCPU 				= -1;
 		final double sequentialPercentage 	= 0.01;
@@ -27,7 +27,7 @@ public class AmdahlTests {
 	
 	
 	@Test
-	public void testAmdahlSpeedupFactorWithZeroNumberOfCPU() throws InvalidArgumentException
+	public void testAmdahlSpeedupFactorWithZeroNumberOfCPU() throws IllegalArgumentException
 	{
 		final int numberOfCPU 				= 0;
 		final double sequentialPercentage 	= 0.01;
