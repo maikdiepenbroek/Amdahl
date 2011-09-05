@@ -12,9 +12,9 @@ public final class Amdahl {
 
 	/**
 	 * @param args
+	 * @throws InvalidArgumentException 
 	 */
-	public static void main(final String[] args) {
-		// TODO Auto-generated method stub
+	public static void main(final String[] args) throws InvalidArgumentException {
 
 	}
 	
@@ -23,9 +23,13 @@ public final class Amdahl {
 	 * @param numberOfCPU The number of CPU'S
 	 * @param sequentialPercentage The sequential percentage
 	 * @return the speedUpFactor
+	 * @throws InvalidArgumentException
 	 */
-	public static double calculateSpeedUpFactor(final int numberOfCPU, final double sequentialPercentage) {
-		return numberOfCPU / (1 + ((numberOfCPU-1)/numberOfCPU));		
+	public static double calculateSpeedUpFactor(final int numberOfCPU, final double sequentialPercentage) throws InvalidArgumentException {
+		if(numberOfCPU < 1) {
+			throw new InvalidArgumentException();
+		}
+		return numberOfCPU / (1 + sequentialPercentage/10 * ( numberOfCPU-1) ) ;		
 	}
 	
 	/**
@@ -33,8 +37,10 @@ public final class Amdahl {
 	 * @param speedUpFactor The calculated speedupfactor
 	 * @param numberOfCPU The number of CPU'S
 	 * @return the efficiencyFactor
+	 * @throws InvalidArgumentException
 	 */
-	public static double calculateEfficiencyFactor(final double speedUpFactor, final int numberOfCPU) {
+	public static double calculateEfficiencyFactor(final double speedUpFactor, final int numberOfCPU) throws InvalidArgumentException {
+		if(numberOfCPU < 1) { throw new InvalidArgumentException();	}
 		return speedUpFactor/numberOfCPU;
 	}
 
