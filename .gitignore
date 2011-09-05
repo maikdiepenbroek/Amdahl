@@ -1,0 +1,18 @@
+# OS generated files #
+######################
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
+
+.checkstyle
+.classpath
+
+bin/*
+build/*
+libs/*
+dist/*
+reports/*
+toolconfigs/*
+
+build.xml
