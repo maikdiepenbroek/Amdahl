@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="5.0">
+<file name="/Users/maikdiepenbroek/Documents/School/Jaar 3/DDOA/DDA/Eclipse/Amdahl/src/amdahl/Amdahl.java">
+<error line="26" column="130" severity="warning" message="&apos;100&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
+<error line="45" column="64" severity="warning" message="&apos;10&apos; is a magic number." source="com.puppycrawl.tools.checkstyle.checks.coding.MagicNumberCheck"/>
+</file>
+<file name="/Users/maikdiepenbroek/Documents/School/Jaar 3/DDOA/DDA/Eclipse/Amdahl/src/amdahl/IllegalArgumentException.java">
+</file>
+</checkstyle>

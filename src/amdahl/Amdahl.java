@@ -35,7 +35,7 @@ public final class Amdahl {
 	/**
 	 * @author maikdiepenbroek
 	 * @param numberOfCPU The number of CPU'S
-	 * @param sequentialPercentage The sequential percentage
+	 * @param sequentialPercentage The percentage of the program that needs to run sequential, where 1 = 100%
 	 * @return the speedUpFactor
 	 * @throws InvalidArgumentException
 	 */
