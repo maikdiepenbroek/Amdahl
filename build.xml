@@ -42,7 +42,7 @@
 			<formatter type="xml" />
 			<batchtest todir="${dirs.junit}">
 				<fileset dir="${dirs.build}">
-					<include name="**/*Test.class" />
+					<include name="**/*Tests.class" />
 				</fileset>
 			</batchtest>
 		</junit>
