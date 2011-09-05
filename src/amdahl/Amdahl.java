@@ -17,6 +17,7 @@ public final class Amdahl {
 	public static void main(final String[] args) throws IllegalArgumentException {
 		System.out.println("Amdahl's Law Calculator by Maik Diepenbroek and Wouter Konecny");
 	}
+	
 	private Amdahl() {	}
 	
 	/**
@@ -40,7 +41,7 @@ public final class Amdahl {
 	 * @throws InvalidArgumentException
 	 */
 	public static double calculateEfficiencyFactor(final double speedUpFactor, final int numberOfCPU) throws IllegalArgumentException {
-		if(numberOfCPU < 0) { throw new IllegalArgumentException( "You cannot have a negative amount of CPU." );	}
+		if(numberOfCPU < 1) { throw new IllegalArgumentException( "You cannot have zero or negative amount of CPU." );	}
 		
 		return speedUpFactor / numberOfCPU;
 	}

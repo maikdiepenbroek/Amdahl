@@ -36,4 +36,32 @@ public class AmdahlTests {
 		assertEquals(expected, Amdahl.calculateSpeedUpFactor( numberOfCPU, sequentialPercentage ), 0.001);
 	}
 	
+	@Test
+	public void testAmdahlEfficiencyFactorWithPositiveNumberOfCPU() throws IllegalArgumentException
+	{
+		final double speedUpFactor			= 500.250;
+		final int numberOfCPU 				= 1000;
+		final double expected				= 0.5;
+		
+		assertEquals(expected, Amdahl.calculateEfficiencyFactor( speedUpFactor, numberOfCPU ), 0.001);
+	}
+	
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void testAmdahlEfficiencyFactorWithNegativeNumberOfCPU() throws IllegalArgumentException
+	{
+		final double speedUpFactor			= 500.250;
+		final int numberOfCPU 				= -1;
+		
+		Amdahl.calculateEfficiencyFactor(speedUpFactor, numberOfCPU);
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void testAmdahlEfficiencyFactorWithZeroNumberOfCPU() throws IllegalArgumentException
+	{
+		final double speedUpFactor			= 500.250;
+		final int numberOfCPU 				= 0;
+		
+		Amdahl.calculateEfficiencyFactor( speedUpFactor, numberOfCPU );
+	}
 }
