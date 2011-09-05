@@ -24,7 +24,7 @@ public class Amdahl {
 	 * @param sequentialPercentage The sequential percentage
 	 * @return the speedUpFactor
 	 */
-	public double calculateSpeedUpFactor(final int numberOfCPU, final double sequentialPercentage) {
+	public static double calculateSpeedUpFactor(final int numberOfCPU, final double sequentialPercentage) {
 		return numberOfCPU / (1 + ((numberOfCPU-1)/numberOfCPU));		
 	}
 	
@@ -34,7 +34,7 @@ public class Amdahl {
 	 * @param numberOfCPU The number of CPU'S
 	 * @return the efficiencyFactor
 	 */
-	public double calculateEfficiencyFactor(final double speedUpFactor, final int numberOfCPU) {
+	public static double calculateEfficiencyFactor(final double speedUpFactor, final int numberOfCPU) {
 		return speedUpFactor/numberOfCPU;
 	}
 
