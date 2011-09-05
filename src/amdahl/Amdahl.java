@@ -11,8 +11,6 @@ package amdahl;
 public final class Amdahl {
 	
 	/**
-	 * @author Maik Diepenbroek
-	 * @author Wouter Konecny
 	 * @param args
 	 * @throws InvalidArgumentException 
 	 */
@@ -35,8 +33,6 @@ public final class Amdahl {
 	private Amdahl() {	}
 	
 	/**
-	 * @author Maik Diepenbroek
-	 * @author Wouter Konecny
 	 * @param numberOfCPU The number of CPU'S
 	 * @param sequentialPercentage The percentage of the program that needs to run sequential, where 1 = 100%
 	 * @return the speedUpFactor
@@ -49,8 +45,6 @@ public final class Amdahl {
 	}
 	
 	/**
-	 * @author Maik Diepenbroek
-	 * @author Wouter Konecny
 	 * @param speedUpFactor The calculated speedupfactor
 	 * @param numberOfCPU The number of CPU'S
 	 * @return the efficiencyFactor
