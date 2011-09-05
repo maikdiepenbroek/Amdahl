@@ -17,6 +17,7 @@ public final class Amdahl {
 	public static void main(final String[] args) throws IllegalArgumentException {
 		System.out.println("Amdahl's Law Calculator by Maik Diepenbroek and Wouter Konecny");
 	}
+	
 	private Amdahl() {	}
 	
 	/**
