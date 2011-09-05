@@ -33,7 +33,7 @@ public final class Amdahl {
 	private Amdahl() {	}
 	
 	/**
-	 * @param numberOfCPU The number of CPU'S
+	 * @param numberOfCPU The number of CPU's
 	 * @param sequentialPercentage The percentage of the program that needs to run sequential, where 1 = 100%
 	 * @return the speedUpFactor
 	 * @throws InvalidArgumentException
@@ -46,7 +46,7 @@ public final class Amdahl {
 	
 	/**
 	 * @param speedUpFactor The calculated speedupfactor
-	 * @param numberOfCPU The number of CPU'S
+	 * @param numberOfCPU The number of CPU's
 	 * @return the efficiencyFactor
 	 * @throws InvalidArgumentException
 	 */
