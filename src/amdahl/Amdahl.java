@@ -8,12 +8,12 @@ package amdahl;
  * @author wouter konecny
  *
  */
-public class Amdahl {
+public final class Amdahl {
 
 	/**
 	 * @param args
 	 */
-	public void main(String[] args) {
+	public static void main(final String[] args) {
 		// TODO Auto-generated method stub
 
 	}

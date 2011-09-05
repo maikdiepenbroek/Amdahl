@@ -13,7 +13,7 @@ public class AmdahlTests {
 		final double sequentialPercentage 	= 0.01;
 		double expected						= 500.250;
 		
-		assertEquals(expected, Amdahl.calculateSpeedUpFactor(numberOfCPU , sequentialPercentage));
+		assertEquals(expected, Amdahl.calculateSpeedUpFactor(numberOfCPU, sequentialPercentage), 0.001);
 	}
 	
 	@Test(expected=IllegalArgumentException.class)
@@ -33,7 +33,7 @@ public class AmdahlTests {
 		final double sequentialPercentage 	= 0.01;
 		
 		
-		assertEquals(0, Amdahl.calculateSpeedUpFactor( numberOfCPU, sequentialPercentage ));
+		assertEquals(0, Amdahl.calculateSpeedUpFactor( numberOfCPU, sequentialPercentage ), 0.001);
 	}
 	
 }
