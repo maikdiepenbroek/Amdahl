@@ -22,7 +22,6 @@ public class AmdahlTests {
 		final double sequentialPercentage 	= 0.01;
 		
 		Amdahl.calculateSpeedupFactor(numberOfCPU, sequentialPercentage);
-);
 	}
 	
 	
@@ -34,7 +33,6 @@ public class AmdahlTests {
 		
 		
 		assertEquals(0, Amdahl.calculateSpeedupFactor( numberOfCPU, sequentialPercentage ));
-);
 	}
 	
 }
