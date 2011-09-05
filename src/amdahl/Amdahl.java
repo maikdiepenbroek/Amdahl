@@ -9,13 +9,25 @@ package amdahl;
  *
  */
 public final class Amdahl {
-
+	
 	/**
 	 * @param args
 	 * @throws InvalidArgumentException 
 	 */
 	public static void main(final String[] args) throws IllegalArgumentException {
+		double speedUpFactor;
+		final int numberOfCPU = 1000;
+		final double sequentialPercentage = 0.01;
+		
+		speedUpFactor = calculateSpeedUpFactor(numberOfCPU, sequentialPercentage);
+		
 		System.out.println("Amdahl's Law Calculator by Maik Diepenbroek and Wouter Konecny");
+		System.out.println("______________________________________________________________");
+		System.out.println("The Speedup Factor for an application which can run sequential for " + (sequentialPercentage*100) + "% (percent) and with " + numberOfCPU + " CPU's:");
+		System.out.println(speedUpFactor);
+		System.out.println("");
+		System.out.println("The Efficiency Factor for an application with " + numberOfCPU + " CPU's and a speedup factor of " + speedUpFactor + ":");
+		System.out.println(calculateEfficiencyFactor(speedUpFactor, numberOfCPU));
 	}
 	
 	private Amdahl() {	}

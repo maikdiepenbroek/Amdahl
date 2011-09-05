@@ -10,7 +10,7 @@ public final class IllegalArgumentException extends Exception {
 		
 	}
 	
-	public IllegalArgumentException(String msg) {
+	public IllegalArgumentException( final String msg) {
 		super(msg);
 	}
 }
