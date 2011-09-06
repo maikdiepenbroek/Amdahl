@@ -43,7 +43,7 @@ public final class Amdahl {
 			throw new IllegalArgumentException( "You cannot have a negative amount of CPU." );
 		}
 		
-		if(sequentialPercentage < 0) {
+		if(sequentialPercentage < 0 ) {
 			throw new IllegalArgumentException( "You cannot have a negative amount of sequential percentage." );
 		}
 		
