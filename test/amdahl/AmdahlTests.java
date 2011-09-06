@@ -26,14 +26,13 @@ public class AmdahlTests {
 	}
 	
 	
-	@Test
-	public void testAmdahlSpeedupFactorWithZeroNumberOfCPU() throws IllegalArgumentException
+	@Test(expected=IllegalArgumentException.class)
+	public void testAmdahlSpeedupFactorZeroNumberOfCPU() throws IllegalArgumentException
 	{
 		final int numberOfCPU 				= 0;
 		final double sequentialPercentage 	= 0.01;
-		final double expected				= 0;
 		
-		assertEquals(expected, Amdahl.calculateSpeedUpFactor( numberOfCPU, sequentialPercentage ), 0.001);
+		Amdahl.calculateSpeedUpFactor(numberOfCPU, sequentialPercentage);
 	}
 	
 	@Test
