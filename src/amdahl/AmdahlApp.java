@@ -29,7 +29,7 @@ public final class AmdahlApp {
 	
 	/**
 	 * @return void
-	 * @throws IllegalArgumentException when giving invalid aguments to calculations 
+	 * @throws IllegalArgumentException when giving invalid arguments to calculations 
 	 */
 	private static void performAmdahlCalculations() throws IllegalArgumentException {
 		speedUpFactor 		= Amdahl.calculateSpeedUpFactor(numberOfCPU, sequentialPercentage);
