@@ -21,10 +21,9 @@ public final class Amdahl {
 	 * @throws IllegalArgumentException when number of CPU < 1 or sequential percentage != 0 <= sequentialPercentage <= 1
 	 */
 	public static double calculateSpeedUpFactor(final int numberOfCPU, final double sequentialPercentage) throws IllegalArgumentException {
-		
 		validateNumberOfCPU(numberOfCPU);		
 		validateSequentialPercentage(sequentialPercentage);
-		
+	
 		return numberOfCPU / (1 + sequentialPercentage/SEQUENTIALPERCENTAGEDIVIDER * ( numberOfCPU-1) ) ;	
 	}
 	
