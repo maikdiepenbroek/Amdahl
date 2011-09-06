@@ -39,8 +39,13 @@ public final class Amdahl {
 	 * @throws InvalidArgumentException
 	 */
 	public static double calculateSpeedUpFactor(final int numberOfCPU, final double sequentialPercentage) throws IllegalArgumentException {
-		if(numberOfCPU < 0) { throw new IllegalArgumentException( "You cannot have a negative amount of CPU." ); }
-		if(sequentialPercentage < 0) { throw new IllegalArgumentException( "You cannot have a negative amount of sequential percentage." );}
+		if(numberOfCPU < 0) {
+			throw new IllegalArgumentException( "You cannot have a negative amount of CPU." );
+		}
+		
+		if(sequentialPercentage < 0) {
+			throw new IllegalArgumentException( "You cannot have a negative amount of sequential percentage." );
+		}
 		
 		return numberOfCPU / (1 + sequentialPercentage/10 * ( numberOfCPU-1) ) ;	
 	}
@@ -52,8 +57,13 @@ public final class Amdahl {
 	 * @throws InvalidArgumentException
 	 */
 	public static double calculateEfficiencyFactor(final double speedUpFactor, final int numberOfCPU) throws IllegalArgumentException {
-		if(speedUpFactor < 0) { throw new IllegalArgumentException( "You cannot have a negative amount of speedup factor (double speedUpFactor)." );}
-		if(numberOfCPU < 1) { throw new IllegalArgumentException( "You cannot have zero or negative amount of CPU." );	}
+		if(speedUpFactor < 0) {
+			throw new IllegalArgumentException( "You cannot have a negative amount of speedup factor (double speedUpFactor)." );
+		}
+		
+		if(numberOfCPU < 1) {
+			throw new IllegalArgumentException( "You cannot have zero or negative amount of CPU." );
+		}
 		
 		return speedUpFactor / numberOfCPU;
 	}
