@@ -130,14 +130,14 @@ public final class AmdahlApp {
 		frame.setVisible(true);
 	}
 	
-	private static void drawLabelToPane( Container pane, final String label, int x, int y, int width, int height, int textAlignment ) {
+	private static void drawLabelToPane( Container pane, final String label, final int x, final int y, final int width, final int height, final int textAlignment ) {
 		JLabel newLabel = new JLabel(label);
 		newLabel.setHorizontalAlignment(textAlignment);
 		newLabel.setBounds(x, y, width, height);
 		pane.add(newLabel);
 	}
 	
-	private static double roundFourDecimals(double d) {
+	private static double roundFourDecimals(final double d) {
     	DecimalFormat newNumberFormat = new DecimalFormat("#.####");
     	return Double.valueOf(newNumberFormat.format(d));
 	}

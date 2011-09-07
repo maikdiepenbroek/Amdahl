@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="5.0">
-<file name="/Users/maikdiepenbroek/Documents/School/Jaar 3/DDOA/DDA/Eclipse/Amdahl/src/amdahl/Amdahl.java">
+<file name="/Users/wouterkonecny/Documents/Eclipse/workspace/Amdahl/src/amdahl/Amdahl.java">
 </file>
-<file name="/Users/maikdiepenbroek/Documents/School/Jaar 3/DDOA/DDA/Eclipse/Amdahl/src/amdahl/AmdahlApp.java">
-</file>
-<file name="/Users/maikdiepenbroek/Documents/School/Jaar 3/DDOA/DDA/Eclipse/Amdahl/src/amdahl/IllegalArgumentException.java">
+<file name="/Users/wouterkonecny/Documents/Eclipse/workspace/Amdahl/src/amdahl/IllegalArgumentException.java">
 </file>
 </checkstyle>
