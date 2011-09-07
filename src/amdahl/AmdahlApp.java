@@ -1,16 +1,18 @@
 package amdahl;
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.text.DecimalFormat;
 
 import javax.swing.*;
 
 public final class AmdahlApp {
 	
-	private static JFrame frame;
+	private static JFrame frame = new JFrame("Amdahl Calculator");
 	private static JPanel background;
 	private static Container pane;
 	
-	private final static int numberOfCPU = 1000;
+	private static int numberOfCPU = 1000;
 	private final static double sequentialPercentage = 0.01;
 	
 	private static double speedUpFactor;
@@ -43,7 +45,6 @@ public final class AmdahlApp {
 	}
 	
 	private static void setUpJFrame() {
-		frame = new JFrame("Amdahl Calculator");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		frame.setPreferredSize(new Dimension(300, 220));
@@ -60,6 +61,32 @@ public final class AmdahlApp {
 		drawSpeedUpFactorToPane(pane);
 		drawEfficiencyFactorToPane(pane);
 		drawCreatorNamesToPane(pane);
+		
+		drawTextFieldToPane();
+	}
+	
+	private static void drawTextFieldToPane() {
+		final JTextField textField = new JTextField("" + numberOfCPU + "");
+		textField.setBounds(0, 175, 50, 20);
+		textField.addKeyListener(new KeyAdapter() {
+		      public void keyReleased(KeyEvent e) {
+		    	  try  
+		    	   {  
+		    		  numberOfCPU = Integer.parseInt( textField.getText() );
+		    		  performAmdahlCalculations();
+		    	   }  
+		    	   catch( Exception ex )  
+		    	   {  
+		    		   numberOfCPU = 1;
+		    	   }
+		    	  
+		    	  showCalculationsInUI();
+		        }
+		});
+		
+		pane.add(textField);
+		textField.requestFocus();
+		textField.setCaretPosition(textField.getText().length()-1);
 	}
 	
 	private static void drawSpeedUpFactorToPane( Container pane ) {
