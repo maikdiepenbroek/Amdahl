@@ -63,55 +63,57 @@ public final class AmdahlApp {
 	}
 	
 	private static void drawSpeedUpFactorToPane( Container pane ) {
-		JLabel speedUpFactorLabel = new JLabel("Speedup Factor: (" + sequentialPercentage + "% seq. " + numberOfCPU + " CPU's)");
-		speedUpFactorLabel.setBounds(10, 5, 300, 20);
-		pane.add(speedUpFactorLabel);
+		drawLabelToPane(pane,
+						 "Speedup Factor: (" + sequentialPercentage + "% seq. " + numberOfCPU + " CPU's)",
+						 10, 5, 300, 20,
+						 SwingConstants.LEFT);
 		
-		JLabel answerLabel = new JLabel("" + roundFourDecimals(speedUpFactor) + " =");
-		answerLabel.setBounds(10, 37, 80, 20);
-		answerLabel.setHorizontalAlignment(SwingConstants.RIGHT);
-		pane.add(answerLabel);
+		drawLabelToPane(pane,
+						"" + roundFourDecimals(speedUpFactor) + " =",
+						10, 37, 80, 20,
+						SwingConstants.RIGHT);
 		
-		JLabel calculationTop = new JLabel("" + numberOfCPU + "");
-		calculationTop.setBounds(60, 29, 230, 20);
-		calculationTop.setHorizontalAlignment(SwingConstants.CENTER);
-		pane.add(calculationTop);
+		drawLabelToPane(pane,
+						"" + numberOfCPU + "",
+						60, 29, 230, 20,
+						SwingConstants.CENTER);
 		
-		JLabel devidingLabel = new JLabel("______________________");
-		devidingLabel.setBounds(60, 32, 230, 20);
-		devidingLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		pane.add(devidingLabel);
+		drawLabelToPane(pane,
+						"______________________",
+						60, 32, 230, 20,
+						SwingConstants.CENTER);
 		
-		JLabel calculationBottom = new JLabel("1 + " + sequentialPercentage + " * ( " + numberOfCPU + " - 1 )");
-		calculationBottom.setBounds(60, 48, 230, 20);
-		calculationBottom.setHorizontalAlignment(SwingConstants.CENTER);
-		pane.add(calculationBottom);
+		drawLabelToPane(pane,
+						"1 + " + sequentialPercentage + " * ( " + numberOfCPU + " - 1 )",
+						60, 48, 230, 20,
+						SwingConstants.CENTER);
 	}
 	
 	private static void drawEfficiencyFactorToPane( Container pane ) {
-		JLabel speedUpFactorLabel = new JLabel("Efficiency Factor:");
-		speedUpFactorLabel.setBounds(10, 95, 300, 20);
-		pane.add(speedUpFactorLabel);
+		drawLabelToPane(pane,
+						"Efficiency Factor:",
+						 10, 95, 300, 20,
+						 SwingConstants.LEFT);
 		
-		JLabel answerLabel = new JLabel("" + roundFourDecimals(efficiencyFactor) + " =");
-		answerLabel.setBounds(10, 127, 80, 20);
-		answerLabel.setHorizontalAlignment(SwingConstants.RIGHT);
-		pane.add(answerLabel);
+		drawLabelToPane(pane,
+						"" + roundFourDecimals(efficiencyFactor) + " =",
+						10, 127, 80, 20,
+						SwingConstants.RIGHT);
 		
-		JLabel calculationTop = new JLabel("" + roundFourDecimals(speedUpFactor) + "");
-		calculationTop.setBounds(60, 119, 135, 20);
-		calculationTop.setHorizontalAlignment(SwingConstants.CENTER);
-		pane.add(calculationTop);
+		drawLabelToPane(pane,
+						"" + roundFourDecimals(speedUpFactor) + "",
+						60, 119, 135, 20,
+						SwingConstants.CENTER);
 		
-		JLabel devidingLabel = new JLabel("_________");
-		devidingLabel.setBounds(60, 122, 135, 20);
-		devidingLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		pane.add(devidingLabel);
+		drawLabelToPane(pane,
+						"_________",
+						60, 122, 135, 20,
+						SwingConstants.CENTER);
 		
-		JLabel calculationBottom = new JLabel("" + numberOfCPU + "");
-		calculationBottom.setBounds(60, 138, 135, 20);
-		calculationBottom.setHorizontalAlignment(SwingConstants.CENTER);
-		pane.add(calculationBottom);
+		drawLabelToPane(pane,
+						"" + numberOfCPU + "",
+						60, 138, 135, 20,
+						SwingConstants.CENTER);
 	}
 	
 	private static void drawCreatorNamesToPane( Container pane ) {
@@ -126,6 +128,13 @@ public final class AmdahlApp {
 		frame.setLocationRelativeTo(null);
 		frame.pack();
 		frame.setVisible(true);
+	}
+	
+	private static void drawLabelToPane( Container pane, final String label, int x, int y, int width, int height, int textAlignment ) {
+		JLabel newLabel = new JLabel(label);
+		newLabel.setHorizontalAlignment(textAlignment);
+		newLabel.setBounds(x, y, width, height);
+		pane.add(newLabel);
 	}
 	
 	private static double roundFourDecimals(double d) {
